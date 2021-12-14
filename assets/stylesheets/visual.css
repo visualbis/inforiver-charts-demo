@@ -1,0 +1,25 @@
+#content-info.hide, #visual-container.hide {
+    display: none;
+}
+
+#visual-container {
+    display: grid;
+    grid-template-rows: 60px 600px 1fr;
+    grid-template-columns: 1fr;
+    grid-gap: 10px;
+    padding: 20px;
+    justify-items: center;
+}
+
+#visual-render-area {
+    width: 800px;
+    height: 600px;
+    display: grid;
+}
+
+#options-area {
+    min-height: 300px;
+    overflow: auto;
+    width: 800px;
+    border: 1px solid #ddd;
+}
