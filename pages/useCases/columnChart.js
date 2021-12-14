@@ -36,6 +36,12 @@ const getColumnChart = () => {
                 measures: ["Sales"],
             },
             dataRows,
+        },
+        feature: {
+            toolbar: {
+                enabled: false,
+                exportAsPDF: false,
+            }
         }
     });
     columnChart.render();

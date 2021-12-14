@@ -15,6 +15,7 @@
     width: 800px;
     height: 600px;
     display: grid;
+    border: 2px solid #333;
 }
 
 #options-area {
