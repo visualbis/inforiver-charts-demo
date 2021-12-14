@@ -33,15 +33,7 @@ const getColumnChart = () => {
         datasource: {
             metadata: {
                 row: "Country",
-                measures: ["Sales", "Profit"],
-                measureMeta: {
-                    AC: ["Sales"],
-                    PY: "Profit"
-                }
-            },
-            measureConfig: {
-                hasRelativeVariance: false,
-                hasAbsoluteVariance: true
+                measures: ["Sales"],
             },
             dataRows,
         }
