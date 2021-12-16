@@ -39,8 +39,9 @@ const getColumnChart = () => {
         },
         feature: {
             toolbar: {
-                enabled: false,
+                enabled: true,
                 exportAsPDF: false,
+                sidePanelView: false
             }
         }
     });
