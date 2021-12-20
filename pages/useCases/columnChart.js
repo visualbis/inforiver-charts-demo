@@ -1,7 +1,8 @@
 import hljs from "highlight.js";
 import { InforiverChart } from "@visualbi/inforiver-charts";
 import { toggleContainer } from "../../assets/scripts/router";
-import dataRows from "../datasets/usecases";
+import dataRows from "../datasets/complex";
+import { groupBy } from "../utils";
 
 const getColumnChart = () => {
     toggleContainer(true);
@@ -32,10 +33,11 @@ const getColumnChart = () => {
         },
         datasource: {
             metadata: {
-                row: "Country",
-                measures: ["Sales"],
+                row: "Year",
+                columns: ["Month"],
+                measures: ["AC"],
             },
-            dataRows,
+            dataRows: groupBy(dataRows, ["Month", "Year"], ["AC"]),
         },
         feature: {
             toolbar: {

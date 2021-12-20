@@ -1,7 +1,7 @@
 import hljs from "highlight.js";
 import { InforiverChart } from "@visualbi/inforiver-charts";
 import { toggleContainer } from "../../assets/scripts/router";
-import dataRows from "../datasets/usecases";
+import dataRows from "../datasets/complex";
 
 const getColumnChartHorizontal = () => {
     toggleContainer(true);
