@@ -1,7 +1,7 @@
 import hljs from "highlight.js";
 import { InforiverChart } from "@visualbi/inforiver-charts";
 import { toggleContainer } from "../../assets/scripts/router";
-import dataRows from "../datasets/complex";
+import dataRows from "../datasets/dualgroup";
 import { groupBy } from "../utils";
 
 const getColumnChart = () => {
@@ -33,11 +33,11 @@ const getColumnChart = () => {
         },
         datasource: {
             metadata: {
-                row: "Year",
-                columns: ["Month"],
+                row: "Country",
+                columns: ["Year", "Quarter"],
                 measures: ["AC"],
             },
-            dataRows: groupBy(dataRows, ["Month", "Year"], ["AC"]),
+            dataRows,
         },
         feature: {
             toolbar: {
