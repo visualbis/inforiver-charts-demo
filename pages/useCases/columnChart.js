@@ -35,15 +35,15 @@ const getColumnChart = () => {
             metadata: {
                 row: "Country",
                 columns: ["Year", "Quarter"],
-                measures: ["AC"],
+                measures: ["Sales", "Profit"],
             },
             dataRows,
         },
         feature: {
             toolbar: {
                 enabled: true,
-                exportAsPDF: false,
-                sidePanelView: false
+                exportAsPDF: true,
+                sidePanelView: true
             }
         }
     });
