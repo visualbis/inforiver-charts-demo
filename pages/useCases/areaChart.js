@@ -1,10 +1,10 @@
 import hljs from "highlight.js";
 import { InforiverChart } from "@visualbi/inforiver-charts";
 import { toggleContainer } from "../../assets/scripts/router";
-import dataRows from "../datasets/dualgroup";
+import dataRows from "../datasets/simple";
 import { groupBy } from "../utils";
 
-const getColumnChart = () => {
+const getAreaChart = () => {
   toggleContainer(true);
   const pageTitle = document.getElementById("page-title");
   pageTitle.textContent = "Column Chart";
@@ -14,7 +14,7 @@ const getColumnChart = () => {
         const options = {
             container: '<HTML Element>',
             chartOptions: {
-                chartType: 'columnChart'
+                chartType: 'areaChart'
             },
             datasource: {
                 metadata: {
@@ -29,16 +29,19 @@ const getColumnChart = () => {
   );
   codeOptions.innerHTML = optionsValue.value;
   const visualDOM = document.getElementById("visual-render-area");
-  const columnChart = new InforiverChart({
+  const areaChart = new InforiverChart({
     container: visualDOM,
     chartOptions: {
-      chartType: "columnChart",
+      chartType: "areaChart",
     },
     datasource: {
       metadata: {
         row: ["Country"],
-        columns: ["Year", "Quarter"],
-        measures: ["AC"],
+        measures: ["Sales", "Profit"],
+        measureMeta: {
+          AC: ["Profit"],
+          PY: "Sales",
+        },
       },
 
       dataRows,
@@ -49,7 +52,7 @@ const getColumnChart = () => {
       },
     },
   });
-  columnChart.render();
+  areaChart.render();
 };
 
-export default getColumnChart;
+export default getAreaChart;

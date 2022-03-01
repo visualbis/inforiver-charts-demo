@@ -12,7 +12,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@visualbi/inforiver-charts": "file:../inforiver-charts",
+    "@visualbi/inforiver-charts": "file:../ibcscharts",
     "highlight.js": "^11.3.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
