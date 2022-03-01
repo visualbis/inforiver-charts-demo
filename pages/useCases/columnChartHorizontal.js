@@ -37,7 +37,8 @@ const getColumnChartHorizontal = () => {
     },
     datasource: {
       metadata: {
-        row: "Country",
+        row: ["Country"],
+        // columns: ["State"],
         measures: ["AC"],
       },
       dataRows,

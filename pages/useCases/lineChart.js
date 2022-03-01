@@ -4,7 +4,7 @@ import { toggleContainer } from "../../assets/scripts/router";
 import dataRows from "../datasets/dualgroup";
 import { groupBy } from "../utils";
 
-const getColumnChart = () => {
+const getLineChart = () => {
   toggleContainer(true);
   const pageTitle = document.getElementById("page-title");
   pageTitle.textContent = "Column Chart";
@@ -14,7 +14,7 @@ const getColumnChart = () => {
         const options = {
             container: '<HTML Element>',
             chartOptions: {
-                chartType: 'columnChart'
+                chartType: 'lineChart'
             },
             datasource: {
                 metadata: {
@@ -29,16 +29,19 @@ const getColumnChart = () => {
   );
   codeOptions.innerHTML = optionsValue.value;
   const visualDOM = document.getElementById("visual-render-area");
-  const columnChart = new InforiverChart({
+  const lineChart = new InforiverChart({
     container: visualDOM,
     chartOptions: {
-      chartType: "columnChart",
+      chartType: "lineChart",
     },
     datasource: {
       metadata: {
-        row: ["Country"],
-        columns: ["Year", "Quarter"],
+        row: ["Year", "Quarter"],
         measures: ["AC"],
+        // measureMeta: {
+        //   AC: ["Profit"],
+        //   PY: "Sales",
+        // },
       },
 
       dataRows,
@@ -49,7 +52,7 @@ const getColumnChart = () => {
       },
     },
   });
-  columnChart.render();
+  lineChart.render();
 };
 
-export default getColumnChart;
+export default getLineChart;
