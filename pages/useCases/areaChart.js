@@ -27,7 +27,7 @@ const getAreaChart = () => {
     `,
     { language: "javascript" }
   );
-  codeOptions.innerHTML = optionsValue.value;
+  // codeOptions.innerHTML = optionsValue.value;
   const visualDOM = document.getElementById("visual-render-area");
   const areaChart = new InforiverChart({
     container: visualDOM,

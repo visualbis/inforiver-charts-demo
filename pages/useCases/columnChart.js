@@ -1,7 +1,7 @@
 import hljs from "highlight.js";
 import { InforiverChart } from "@visualbi/inforiver-charts";
 import { toggleContainer } from "../../assets/scripts/router";
-import dataRows from "../datasets/dualgroup";
+import dataRows from "../datasets/simple";
 import { groupBy } from "../utils";
 
 const getColumnChart = () => {
@@ -27,7 +27,7 @@ const getColumnChart = () => {
     `,
     { language: "javascript" }
   );
-  codeOptions.innerHTML = optionsValue.value;
+  // codeOptions.innerHTML = optionsValue.value;
   const visualDOM = document.getElementById("visual-render-area");
   const columnChart = new InforiverChart({
     container: visualDOM,
@@ -37,8 +37,11 @@ const getColumnChart = () => {
     datasource: {
       metadata: {
         row: ["Country"],
-        columns: ["Year", "Quarter"],
-        measures: ["AC"],
+        measures: ["Sales", "Profit"],
+        measureMeta: {
+          AC: ["Profit"],
+          PY: "Sales",
+        },
       },
 
       dataRows,

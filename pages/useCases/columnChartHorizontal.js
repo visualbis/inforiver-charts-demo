@@ -27,7 +27,7 @@ const getColumnChartHorizontal = () => {
     `,
     { language: "javascript" }
   );
-  codeOptions.innerHTML = optionsValue.value;
+  // codeOptions.innerHTML = optionsValue.value;
   const visualDOM = document.getElementById("visual-render-area");
   const columnChart = new InforiverChart({
     container: visualDOM,
